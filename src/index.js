@@ -15,9 +15,9 @@ app.use(express.static('src'));
 
 
 const user=process.env.USER
-const passwords=process.env.PASSWORD
+const password=process.env.PASSWORD
 
-const uri = `mongodb+srv://${user}:${passwords}@cluster0.uaiap.mongodb.net/towhidul?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = `mongodb+srv://${user}:${password}@cluster0.uaiap.mongodb.net/towhidul?retryWrites=true&w=majority&appName=Cluster0`;
 
 const handleDatabase=async()=>{
     try{
@@ -43,7 +43,7 @@ handleDatabase().then(()=>{
       
         // File path for the uploaded image
         const imageUrl = `http://localhost:4000//uploads/${req.file.filename}`;
-        res.json({ imageUrl });
+        res.json({ imageUrl});
       });
 })
 
